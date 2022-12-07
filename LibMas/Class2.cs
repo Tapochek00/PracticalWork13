@@ -52,6 +52,15 @@ namespace LibMas
         }
 
         /// <summary>
+        /// Очистка(обнуление) массива
+        /// </summary>
+        /// <param name="arr">Массив</param>
+        public static void ClearArr(ref bool[] arr)
+        {
+            for (int i = 0; i < arr.Length; i++) arr[i] = false;
+        }
+
+        /// <summary>
         /// Очистка(обнуление) Матрицы
         /// </summary>
         /// <param name="arr">Матрица</param>
