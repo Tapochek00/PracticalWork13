@@ -56,16 +56,7 @@ namespace PracticalWork13
             try
             {
                 int j = Convert.ToInt32(jzn.Text) - 1;
-                bool isZero = true;
-                for (int i = 0; i < 5; i++)
-                {
-                    if (A[i, j] != 0)
-                    {
-                        isZero = false;
-                        break;
-                    }
-                }
-                B[j] = isZero;
+                B[j] = Class1.ColumnOfZeros(A, j);
                 dataGridB.ItemsSource = VisualArray.ToDataTable(B).DefaultView;
             }
             catch (Exception ex)
@@ -176,12 +167,6 @@ namespace PracticalWork13
         {
             Class2.ClearArr(ref B);
             dataGridB.ItemsSource = null;
-        }
-
-        private void ClearData_Click(object sender, RoutedEventArgs e)
-        {
-            Class2.ClearArr(ref A);
-            dataGridA.ItemsSource = VisualArray.ToDataTable(A).DefaultView;
         }
 
         private void jzn_TextChanged(object sender, TextChangedEventArgs e)
